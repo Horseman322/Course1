@@ -1,15 +1,55 @@
 public class Main {
+
     private static final Employee[] employees = new Employee[10];
+
+    {
+
+    }
 
     public static int calculateTotalSalary() {
         int sum = 0;
-        for (Employee employee : employees)
+        for (Employee employee : employees) {
             sum += employee.getSalary();
+        }
         return sum;
     }
 
+    public static Employee findEmployeeWithMinSalary() {
+        Employee result = employees[0];
+        int minSalary = employees[0].getSalary();
+        for (Employee employee : employees) {
+            if (employee.getSalary() < minSalary) {
+                minSalary = employee.getSalary();
+                result = employee;
+            }
+        }
+        return result;
+    }
+
+    public static Employee findEmployeeWithMaxSalary() {
+        Employee result = employees[0];
+        int maxSalary = employees[0].getSalary();
+        for (Employee employee : employees) {
+            if (employee.getSalary() > maxSalary) {
+                maxSalary = employee.getSalary();
+                result = employee;
+            }
+        }
+        return result;
+    }
+
+    public static int midlSalary() {
+        int sum = 0;
+        int midlSum = 0;
+        for (Employee employee : employees) {
+            sum += employee.getSalary();
+        }
+        midlSum = sum / employees.length;
+        return midlSum;
+    }
 
     public static void main(String[] args) {
+
         Employee emp1 = new Employee("Сергей", "Петрович", "Большов", 1, 80000);
         Employee emp2 = new Employee("Михаил", "Семенович", "Пальчиков", 1, 60000);
         Employee emp3 = new Employee("Светослав", "Валерьевич", "Мышенок", 1, 100000);
@@ -32,7 +72,13 @@ public class Main {
         System.out.println();
         System.out.println(emp5);
         System.out.println();
-        System.out.println();
         System.out.println(calculateTotalSalary());
+        System.out.println();
+        System.out.println(findEmployeeWithMinSalary());
+        System.out.println();
+        System.out.println(findEmployeeWithMaxSalary());
+        System.out.println();
+        System.out.println(midlSalary());
+        System.out.println();
     }
 }
