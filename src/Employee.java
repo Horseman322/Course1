@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Objects;
 
 public class Employee {
@@ -13,7 +14,7 @@ public class Employee {
 
     private int department;
 
-    private static int salary;
+    private int salary;
 
     public Employee(String name, String secondName, String thirdName, int department, int salary) {
         this.name = name;
@@ -81,5 +82,11 @@ public class Employee {
 
 
     }
+    public String toMinString() {
+        return  "name='" + name +
+                ", secondName='" + secondName +
+                ", thirdName='" + thirdName;
+                    }
+
 
 }

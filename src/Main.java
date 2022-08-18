@@ -2,10 +2,6 @@ public class Main {
 
     private static final Employee[] employees = new Employee[10];
 
-    {
-
-    }
-
     public static int calculateTotalSalary() {
         int sum = 0;
         for (Employee employee : employees) {
@@ -38,9 +34,9 @@ public class Main {
         return result;
     }
 
-    public static int midlSalary() {
-        int sum = 0;
-        int midlSum = 0;
+    public static double midlSalary() {
+        double sum = 0;
+        double midlSum = 0;
         for (Employee employee : employees) {
             sum += employee.getSalary();
         }
@@ -62,6 +58,7 @@ public class Main {
         employees[3] = emp4;
         employees[4] = emp5;
 
+
         System.out.println(emp1);
         System.out.println();
         System.out.println(emp2);
@@ -72,6 +69,16 @@ public class Main {
         System.out.println();
         System.out.println(emp5);
         System.out.println();
+        System.out.println(emp1.toMinString());
+        System.out.println();
+        System.out.println(emp2.toMinString());
+        System.out.println();
+        System.out.println(emp3.toMinString());
+        System.out.println();
+        System.out.println(emp4.toMinString());
+        System.out.println();
+        System.out.println(emp5.toMinString());
+        System.out.println();
         System.out.println(calculateTotalSalary());
         System.out.println();
         System.out.println(findEmployeeWithMinSalary());
@@ -80,5 +87,6 @@ public class Main {
         System.out.println();
         System.out.println(midlSalary());
         System.out.println();
+        System.out.println(emp1.toString());
     }
 }
