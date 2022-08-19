@@ -2,7 +2,7 @@ public class Main {
 
     private static final Employee[] employees = new Employee[10];
 
-    public static int calculateTotalSalary() {
+    private static int calculateTotalSalary() {
         int sum = 0;
         for (Employee employee : employees) {
             sum += employee.getSalary();
@@ -10,7 +10,13 @@ public class Main {
         return sum;
     }
 
-    public static Employee findEmployeeWithMinSalary() {
+    private static void printEmployees() {
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+    }
+
+    private static Employee findEmployeeWithMinSalary() {
         Employee result = employees[0];
         int minSalary = employees[0].getSalary();
         for (Employee employee : employees) {
@@ -22,7 +28,7 @@ public class Main {
         return result;
     }
 
-    public static Employee findEmployeeWithMaxSalary() {
+    private static Employee findEmployeeWithMaxSalary() {
         Employee result = employees[0];
         int maxSalary = employees[0].getSalary();
         for (Employee employee : employees) {
@@ -34,15 +40,15 @@ public class Main {
         return result;
     }
 
-    public static double midlSalary() {
-        double sum = 0;
-        double midlSum = 0;
+    private static double midlSalary() {
+        double sum = calculateTotalSalary();
         for (Employee employee : employees) {
             sum += employee.getSalary();
         }
-        midlSum = sum / employees.length;
-        return midlSum;
+        sum = sum / employees.length;
+        return sum;
     }
+
 
     public static void main(String[] args) {
 
@@ -69,16 +75,6 @@ public class Main {
         System.out.println();
         System.out.println(emp5);
         System.out.println();
-        System.out.println(emp1.toMinString());
-        System.out.println();
-        System.out.println(emp2.toMinString());
-        System.out.println();
-        System.out.println(emp3.toMinString());
-        System.out.println();
-        System.out.println(emp4.toMinString());
-        System.out.println();
-        System.out.println(emp5.toMinString());
-        System.out.println();
         System.out.println(calculateTotalSalary());
         System.out.println();
         System.out.println(findEmployeeWithMinSalary());
@@ -87,6 +83,5 @@ public class Main {
         System.out.println();
         System.out.println(midlSalary());
         System.out.println();
-        System.out.println(emp1.toString());
     }
 }

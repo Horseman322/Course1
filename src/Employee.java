@@ -79,14 +79,5 @@ public class Employee {
                 ", thirdName='" + thirdName +
                 ", department=" + department +
                 ", salary=" + salary;
-
-
     }
-    public String toMinString() {
-        return  "name='" + name +
-                ", secondName='" + secondName +
-                ", thirdName='" + thirdName;
-                    }
-
-
 }
