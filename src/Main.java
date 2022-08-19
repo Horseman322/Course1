@@ -16,6 +16,17 @@ public class Main {
         }
     }
 
+    private static void printEmployeesFIO() {
+        for (Employee employee : employees) {
+            String name = employee.getName();
+            String secondName = employee.getSecondName();
+            String thirdName = employee.getThirdName();
+            String fio = name + secondName + thirdName;
+            System.out.println(fio);
+        }
+    }
+
+
     private static Employee findEmployeeWithMinSalary() {
         Employee result = employees[0];
         int minSalary = employees[0].getSalary();
@@ -65,7 +76,7 @@ public class Main {
         employees[4] = emp5;
 
 
-        System.out.println(emp1);
+        System.out.println();
         System.out.println();
         System.out.println(emp2);
         System.out.println();
